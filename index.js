@@ -6,13 +6,7 @@ const mysql = require('mysql');
 const router = require('./routes/index');
 
 // Creates a database connection
-const db = mysql.createConnection ({
-    host: 'durvbryvdw2sjcm5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    port: 3306,
-    user: 'w40yy3ux2zi9euvl',
-    password: 'wbrgjdgedo4q1wtf',
-    database: 'c0ze3uscw239329b'
-});
+const db = mysql.createConnection (process.env.JAWSDB_URL);
 
 // Connect to the database
 db.connect((err) => {
