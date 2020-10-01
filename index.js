@@ -30,8 +30,6 @@ global.db = db;
 // Creates an Express web server
 const app = express();
 
-console.log(`Process port is: ${process.env.port || process.env.PORT}`);
-
 // Configures the default port which web server will listen on
 const port = process.env.PORT || 80;
 
