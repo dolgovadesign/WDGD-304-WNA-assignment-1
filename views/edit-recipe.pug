@@ -1,0 +1,36 @@
+include partials/navbar.pug
+
+doctype html
+html
+    head
+        title Tasty-World - Edit Recipe
+        link(href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap", rel="stylesheet")
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/navbar.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/recipe-details.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/edit-recipe.css')
+        script(src='/assets/scripts/tasty-world.js')
+    body
+        .container
+            +navbar([
+                { name: 'Home', url: '/' }, 
+                { name: 'Recipes', url: '/recipes' }])
+            .content
+                form(enctype='multipart/form-data')
+                    label.form-label Name*
+                    input.form-field(type='text', required='required', name='name', multiple='false', value=recipe.name)
+
+                    label.form-label Image
+                    - var imageSource = recipe.image ? `/assets/images/custom/${recipe.image}` : `/assets/images/placeholder.png`; 
+                    img.form-image(src=imageSource)
+                    input.form-field(type='file', name='image', accept='.jpg, .jpeg, .png', value=recipe.image)
+
+                    label.form-label Description
+                    textarea.form-field(class='medium', name='description', )= recipe.description
+
+                    label.form-label Ingredients*
+                    textarea.form-field(class='large', name='ingredients', required='required')= recipe.ingredients
+
+                    label.form-label Directions*
+                    textarea.form-field(class='large', name='directions', required='required')= recipe.directions
+
+                    input.form-button(type='button', value='Save', onclick=`saveRecipe(${recipe.id});`)

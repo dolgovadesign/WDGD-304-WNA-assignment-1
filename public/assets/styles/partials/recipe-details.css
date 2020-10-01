@@ -1,0 +1,47 @@
+form {
+    margin: 15px 100px 0 100px;
+}
+
+form * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.form-label {
+    font-family: 'Didact Gothic', sans-serif;
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.form-field {
+    font-family: 'Didact Gothic', sans-serif;
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    padding: 2px;
+    border: 1px solid darkgray;
+}
+
+.form-image {
+    height: 120px;
+    width: 100px;
+    object-fit: cover;
+}
+
+textarea.form-field {
+    resize: none;
+}
+
+.form-button {
+    float: right;
+}
+
+.medium {
+    height: 100px;
+}
+
+.large {
+    height: 150px;
+}

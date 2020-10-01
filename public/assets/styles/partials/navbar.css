@@ -1,0 +1,30 @@
+.navbar {
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.navbar__item {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.align-left {
+    float: left;
+}
+
+.align-right {
+    float: right;
+}
+
+.active {
+    background-color: rgb(36, 148, 46);
+}
+
+.navbar__item:hover:not(.active) {
+    background-color: skyblue;
+    color: black;
+}

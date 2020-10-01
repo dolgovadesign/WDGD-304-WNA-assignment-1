@@ -1,0 +1,16 @@
+include partials/navbar.pug
+
+doctype html
+html
+    head
+        title Tasty-World
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/navbar.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/home.css')
+        link(href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet")
+    body
+        .container
+            +navbar([
+                { name: 'Home', url: '/', active: true },
+                { name: 'Recipes', url: '/recipes' }])
+            h1.content Welcome to Tasty World!
+        

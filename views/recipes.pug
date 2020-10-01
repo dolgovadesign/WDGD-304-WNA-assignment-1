@@ -1,0 +1,24 @@
+include partials/navbar.pug
+include partials/recipe-item.pug
+
+doctype html
+html
+    head
+        title Tasty-World - Recipes
+        link(href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap", rel="stylesheet")
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/navbar.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/recipe-item.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/recipes.css')
+    body
+        .container
+            +navbar([
+                { name: 'Home', url: '/' }, 
+                { name: 'Recipes', url: '/recipes', active: true }, 
+                { name: 'Add New Recipe', url: '/recipes/add', align: 'right'}])
+            .content
+                if recipes && recipes.length
+                    .recipes
+                        each recipe in recipes
+                            +recipe-item(recipe)
+                else
+                    .recipes--empty There are no recipes. Click the link in the upper right corner to create a new one!

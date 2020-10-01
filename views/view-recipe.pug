@@ -1,0 +1,32 @@
+include partials/navbar.pug
+
+doctype html
+html
+    head
+        title Tasty-World - Add Recipe
+        link(href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap", rel="stylesheet")
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/navbar.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/recipe-details.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/view-recipe.css')
+    body
+        .container
+            +navbar([
+                { name: 'Home', url: '/' }, 
+                { name: 'Recipes', url: '/recipes' }])
+            .content
+                form
+                    label.form-label Name*
+                    input.form-field(type='text', required='required', name='name', multiple='false', disabled, value=recipe.name)
+
+                    label.form-label Image
+                    - var imageSource = recipe.image ? `/assets/images/custom/${recipe.image}` : `/assets/images/placeholder.png`;
+                    img.form-image(src=imageSource)
+
+                    label.form-label Description
+                    textarea.form-field(class='medium', name='description', disabled)= recipe.description
+
+                    label.form-label Ingredients*
+                    textarea.form-field(class='large', name='ingredients', disabled, required='required')= recipe.ingredients
+
+                    label.form-label Directions*
+                    textarea.form-field(class='large', name='directions', disabled, required='required')= recipe.directions

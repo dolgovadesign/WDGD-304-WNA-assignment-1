@@ -1,0 +1,8 @@
+mixin navbar (options)
+    .navbar
+        each option in options
+            - var alignment = 'align-' + (option.align || 'left');
+            if option.active
+                span.navbar__item(class=['active', alignment].join(' '))= option.name
+            else
+                a.navbar__item(class=alignment, href=option.url)= option.name

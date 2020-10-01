@@ -1,0 +1,37 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    background-image: url('/assets/images/background-1.jpg');
+    background-size: cover;
+    font-family: 'Didact Gothic', sans-serif;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container .navbar {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.recipes {
+    display: flex;
+    flex-direction: row;
+}
+
+.recipes--empty {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}

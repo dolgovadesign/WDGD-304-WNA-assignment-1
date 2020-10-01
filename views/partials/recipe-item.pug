@@ -1,0 +1,14 @@
+mixin recipe-item(recipe)
+    - var recipePath = `/recipes/${recipe.id}`;
+    .recipe-item
+        .recipe-item__image
+            if recipe.image
+                a(href=recipePath): img(src=`/assets/images/custom/${recipe.image}`)
+            else
+                a(href=recipePath): img(src='/assets/images/placeholder.png')
+        .recipe-item__container
+            p.recipe-item__name= recipe.name
+            p.recipe-item__description= recipe.description
+        .recipe-item__links
+            a.recipe-item__link-button(href=`${recipePath}/edit`): img(src='/assets/images/edit.png')
+            a.recipe-item__link-button(href=`${recipePath}/delete`): img(src='/assets/images/delete.png')

@@ -1,0 +1,33 @@
+include partials/navbar.pug
+
+doctype html
+html
+    head
+        title Tasty-World - Add Recipe
+        link(href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap", rel="stylesheet")
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/navbar.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/partials/recipe-details.css')
+        link(rel='stylesheet', type='text/css', href='/assets/styles/add-recipe.css')
+    body
+        .container
+            +navbar([
+                { name: 'Home', url: '/' }, 
+                { name: 'Recipes', url: '/recipes' }])
+            .content
+                form(action=`/recipes`, method='POST', enctype='multipart/form-data')
+                    label.form-label Name*
+                    input.form-field(type='text', required='required', name='name', multiple='false')
+
+                    label.form-label Image
+                    input.form-field(type='file', name='image', accept='.jpg, .jpeg, .png')
+
+                    label.form-label Description
+                    textarea.form-field(class='medium', name='description', )
+
+                    label.form-label Ingredients*
+                    textarea.form-field(class='large', name='ingredients', required='required')
+
+                    label.form-label Directions*
+                    textarea.form-field(class='large', name='directions', required='required')
+
+                    input.form-button(type='submit', value='Add')
