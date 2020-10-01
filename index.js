@@ -7,11 +7,11 @@ const router = require('./routes/index');
 
 // Creates a database connection
 const db = mysql.createConnection ({
-    host: 'localhost',
-    port: 8889,
-    user: 'root',
-    password: 'root',
-    database: 'tasty-world'
+    host: 'durvbryvdw2sjcm5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    port: 3306,
+    user: 'w40yy3ux2zi9euvl',
+    password: 'wbrgjdgedo4q1wtf',
+    database: 'c0ze3uscw239329b'
 });
 
 // Connect to the database
